@@ -1,25 +1,30 @@
-from Player import Player
+from Bullet import Bullet
 from Enemy import Enemy
+from Player import Player
+from SpriteManager import sprites
+
 
 def setup():
-    global player, enemy1, enemy2
+    global player, sprites
     size(500, 500)
     playerTeam = 1
     enemyTeam = 2
     player = Player(width/2, height/2, playerTeam)
-    enemy1 = Enemy(50, 50, enemyTeam)
-    enemy2 = Enemy(150, 150, enemyTeam)
+    
+    sprites.append(player)
+    sprites.append(Enemy(50, 50, enemyTeam))
+    sprites.append(Enemy(150, 150, enemyTeam))
                            
 def draw():
-    global player, enemy
+    global player, sprites
     background(255)    
-    player.animate()
-    enemy1.animate()
-    enemy2.animate()
+
+    for sprite in sprites:
+        sprite.animate()
     
 def keyPressed():
     global player
-    player.keyDown()
+    player.keyDown()    
         
 def keyReleased():
     global player
