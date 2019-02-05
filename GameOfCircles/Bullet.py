@@ -1,6 +1,7 @@
 class Bullet:
     
     diameter = 10
+    c = color(0)
     
     def __init__(self, x, y, vector, team):
         self.x = x
@@ -13,6 +14,7 @@ class Bullet:
         self.y += self.vector.y
         
     def display(self):
+        fill(self.c)
         ellipse(self.x, self.y, self.diameter, self.diameter)
         
     def animate(self):
