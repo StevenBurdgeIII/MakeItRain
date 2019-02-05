@@ -3,7 +3,6 @@ from Enemy import Enemy
 from Player import Player
 from SpriteManager import sprites
 
-
 def setup():
     global player, sprites
     size(500, 500)
@@ -21,6 +20,20 @@ def draw():
 
     for sprite in sprites:
         sprite.animate()
+        
+    checkCollisions()
+    
+def checkCollisions():
+    global sprites
+    for a in sprites:
+        for b in sprites:
+            if a.team != b.team:
+                d = (pow(a.x - b.x, 2) + pow(a.y - b.y, 2))**(0.5)
+                r1 = a.diameter / 2
+                r2 = b.diameter / 2
+                if(r1 + r2 > d):
+                    sprites.remove(a)
+                    sprites.remove(b)
     
 def keyPressed():
     global player
