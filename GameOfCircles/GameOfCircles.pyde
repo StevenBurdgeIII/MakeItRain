@@ -3,6 +3,9 @@ from Bullet import Bullet
 from Enemy import Enemy
 from Player import Player
 from SpriteManager import sprites
+from RainDrop import RainDrop
+from JigglyBot import JigglyBot
+from ScreenSaverBot import ScreenSaverBot
 
 def setup():
     print "Built with Processing Python version " + platform.python_version()
@@ -14,8 +17,14 @@ def setup():
     player = Player(width/2, height/2, playerTeam)
     
     sprites.append(player)
-    sprites.append(Enemy(50, 50, enemyTeam))
-    sprites.append(Enemy(150, 150, enemyTeam))
+    sprites.append(RainDrop(50, 50, enemyTeam))
+    sprites.append(RainDrop(10, 1100, enemyTeam))
+    sprites.append(RainDrop(80, 70, enemyTeam))
+    sprites.append(RainDrop(120, 50, enemyTeam))
+    sprites.append(RainDrop(50, 150, enemyTeam))
+    sprites.append(RainDrop(150, 15, enemyTeam))
+    sprites.append(ScreenSaverBot(100, 100, enemyTeam))
+    sprites.append(JigglyBot(50, 50, enemyTeam))
                            
 def draw():
     global player, sprites

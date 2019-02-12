@@ -1,4 +1,4 @@
-class Enemy:
+class RainDrop:
     
     speed = 8
     diameter = 50
@@ -11,9 +11,14 @@ class Enemy:
         
     def move(self):
         self.y += self.speed
-        if self.y < 0 or self.y > width:
-            self.speed *= -1
+        if self.y > height:
+            self.y = 0
         
+    def move(self):
+        self.x += self.speed
+        if self.x > width:
+            self.x = 0
+            
     def display(self):
         fill(self.c)
         ellipse(self.x, self.y, self.diameter, self.diameter)
