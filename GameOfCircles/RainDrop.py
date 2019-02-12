@@ -14,10 +14,7 @@ class RainDrop:
         if self.y > height:
             self.y = 0
         
-    def move(self):
-        self.x += self.speed
-        if self.x > width:
-            self.x = 0
+    
             
     def display(self):
         fill(self.c)

@@ -10,8 +10,8 @@ class Enemy:
         self.team = team
         
     def move(self):
-        self.y += self.speed
-        if self.y < 0 or self.y > width:
+        self.x += self.speed
+        if self.x < 0 or self.x > width:
             self.speed *= -1
         
     def display(self):
