@@ -1,7 +1,8 @@
-class RainDrop:
+from Sprite import Sprite
+class RainDrop(Sprite):
     
     speed = 8
-    diameter = 50
+    diameter = 40
     c = color(0,0,255)
     
     def __init__(self, x, y, team):
@@ -11,7 +12,7 @@ class RainDrop:
         
     def move(self):
         self.y += self.speed
-        if self.y > height:
+        if self.y < 0 or self.y > height:
             self.y = 0
         
     

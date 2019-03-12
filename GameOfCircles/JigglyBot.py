@@ -1,7 +1,8 @@
-class JigglyBot:
+from Sprite import Sprite
+class JigglyBot(Sprite):
     
-    speed = 8
-    diameter = 50
+    speed = 6
+    diameter = 60
     c = color(255,0,255)
     
     def __init__(self, x, y, team):
