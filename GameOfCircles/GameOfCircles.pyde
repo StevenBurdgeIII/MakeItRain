@@ -1,8 +1,9 @@
 import platform
+import SpriteManager
+
 from Bullet import Bullet
 from Enemy import Enemy
 from Player import Player
-from SpriteManager import sprites
 from RainDrop import RainDrop
 from JigglyBot import JigglyBot
 from ScreenSaverBot import ScreenSaverBot

@@ -1,8 +1,8 @@
-from SpriteManager import sprites
+from SpriteManager
 from Bullet import Bullet
 from Sprite import Sprite
 
-class Player:
+class Player(Sprite):
     
     # instance variables
     left = False
@@ -13,16 +13,12 @@ class Player:
     diameter = 50
     c = color(255,0,0)
     
-    
-    def handleCollision(self)
-         pass
+    def handleCollision(self):
 
     def __init__(self, x, y, team):
         self.x = width/2
         self.y = height
-        self.team = team
-        
-    def move(self):
+        self.team = teamove(self):
         if self.left:
             self.x -= self.speed
         if self.right:
@@ -33,11 +29,11 @@ class Player:
             self.y += self.speed
         self.x = constrain(self.x, self.diameter / 2, width - self.diameter / 2)
         self.y = constrain(self.y, self.diameter / 2, height - self.diameter / 2)
-        
+
+    def keyDown(se        
     def fire(self):
         print("FIRE")
-        
-    def keyDown(self):
+        lf):
         if key == 'f' or key == 'F':
             sprites.append(Bullet(self.x, self.y, PVector(0, -10), self.team))
         if key == '' or key == 'x':
