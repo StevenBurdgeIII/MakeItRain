@@ -34,14 +34,14 @@ def checkCollisions():
             b = sprites[j]
             if a.team != b.team and collision(a, b):
                 sprites[i].handleCollision()
-                sprites[j].handleCollisions()
+                sprites[j].handleCollision()
                 
 def collision(a, b):
     r1 = a.diameter / 2.0
     r2 = b.diameter / 2.0
     return r1 + r2 > math.sqrt(math.pow(a.x - b.x, 2) + math.pow(a.y - b.y, 2))
 
-def BringOutYerDead():
+def bringOutYerDead():
     for sprite in destroyed:
         if sprite in sprites: # figure out: removing this check causes like 90000 sprites to eventaully add to destroyed list and multiple attempts to remove the smae sprite crashes the program
             sprites.remove(sprite)

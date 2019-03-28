@@ -5,11 +5,13 @@ class Sprite(object):
     diameter = 60
     c = color(255)
     
-    
-    def __int__(self, x, y, team):
+    def __init__(self, x, y, team):
         self.x = x
         self.y = y
         self.team = team
+        
+    def move(self):
+        pass
         
     def display(self):
         fill(self.c)
@@ -17,12 +19,12 @@ class Sprite(object):
                 
     def animate(self):
         self.move()
-        self.display
+        self.display()
         
     def isColliding(self, other):
         r1 = self.diameter / 2.0
         r2 = other.diameter / 2.0
         return r1 + r2 > dist(self.x, self.y, other.x, other.y)
     
-    def handleCollisions(self):
+    def handleCollision(self):
         SpriteManager.destroy(self)

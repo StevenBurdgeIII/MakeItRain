@@ -1,4 +1,5 @@
-from SpriteManager
+import SpriteManager
+
 from Bullet import Bullet
 from Sprite import Sprite
 
@@ -10,15 +11,12 @@ class Player(Sprite):
     up = False
     down = False
     speed = 5
-    diameter = 50
     c = color(255,0,0)
     
     def handleCollision(self):
-
-    def __init__(self, x, y, team):
-        self.x = width/2
-        self.y = height
-        self.team = teamove(self):
+        pass # invincible
+        
+    def move(self):
         if self.left:
             self.x -= self.speed
         if self.right:
@@ -27,17 +25,13 @@ class Player(Sprite):
             self.y -= self.speed
         if self.down:
             self.y += self.speed
-        self.x = constrain(self.x, self.diameter / 2, width - self.diameter / 2)
-        self.y = constrain(self.y, self.diameter / 2, height - self.diameter / 2)
+            
+        self.x = constrain(self.x, 0, width)
+        self.y = constrain(self.y, 0, height)
 
-    def keyDown(se        
-    def fire(self):
-        print("FIRE")
-        lf):
+    def keyDown(self):
         if key == 'f' or key == 'F':
-            sprites.append(Bullet(self.x, self.y, PVector(0, -10), self.team))
-        if key == '' or key == 'x':
-            sprites.append(Bullet(self.x, self.y, PVector(0, -10), self.team))
+            SpriteManager.spawn(Bullet(self.x, self.y, PVector(0, -10), self.team))
     
         if keyCode == LEFT:
             self.left = True
